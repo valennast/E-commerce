@@ -5,6 +5,8 @@ class Card {
         this.img = img;
         this.id = Math.random()*1000;
     }
+
+    
 }
 
 var cards;
@@ -28,7 +30,7 @@ function createCard(card){
           <img src="${card.img}" class="card-img-top">
           <div id="${card.id}" class="card-body">
             <h5 class="card-title">${card.name}</h5>
-            <p class="card-text"> // Price $${card.price}</p>   
+            <p class="card-text"> // Price ${formatoPrecio(card.price)}</p>   
             <a href="#" class="btn btn-warning" onclick="addCard(event)"><span><i class="fas fa-cart-plus "></i></span>Add to the car </a>
           </div>
           <div class="card-footer">
@@ -51,8 +53,17 @@ function addCard(event){
     let product= cards.find(element => {
         return container.id == element.id
     });
-    /* console.log(total_purchase.innerHTML); */
+    console.log(total_purchase.innerHTML);
     let current_total=total_purchase.innerHTML;
-    total_purchase.innerHTML = parseFloat(current_total) + product.price;
+    total_purchase.innerHTML =parseFloat(current_total) + product.price;
     /* console.log(product); */
+}
+
+function formatoPrecio(precio){
+    const formatoprecio = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'EUR',
+        minimumFractionDigits: 2
+      });
+      return formatoprecio.format(precio);
 }
