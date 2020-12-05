@@ -1,0 +1,27 @@
+
+.card{
+    
+    margin-top: 30px;
+    width: 20rem;
+    margin-left: 20px;
+    border-color: black;
+    border-style: groove;
+}
+.btn{
+    margin-left: 10px;
+}
+.card img{
+    width: 100%;
+    height: 50%;
+}
+.foodcards{
+    padding-top: 10px;
+}
+.shopcar{
+    background-color: #bbb;
+    border-radius: 50%;
+}
+.total_purchase{
+    width: 40px;
+    padding-left: 5px;
+}
